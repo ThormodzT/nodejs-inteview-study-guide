@@ -392,6 +392,19 @@ const p3 = Promise.resolve('Another Success');
 Promise.allSettled([p1, p2, p3]).then(results => console.log(results));
 ```
 
+### Simple explanation
+
+It's like a "to-do list" for the future. It eepresente a task that takes time and tells javascript what to do when the task finish.
+
+- You start a task
+- Javascript doesn't wait for the task to finish, it jeeps running other code.
+- When the task is done, Javascript executes the code that depends on the result.
+
+### Notes:
+- Javascript is single-threaded --> It does one thing at a time
+- Asynchronous tasks (like promises) go to separate queue --> They wait until JavaScript finished other tasks
+- Promise (.then) callbacks are placed in the microtask queue --> These get executed before normal tasks 
+
 ---
 
 ### Async/Await
